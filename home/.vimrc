@@ -30,6 +30,7 @@
   " vim-scripts repos
   NeoBundle 'L9'
   NeoBundle 'FuzzyFinder'
+  NeoBundle 'mako.vim'
   if executable('ack')
     NeoBundle 'ack.vim'
   endif
