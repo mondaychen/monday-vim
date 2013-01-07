@@ -22,7 +22,8 @@
   NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'myusuf3/numbers.vim'
-  NeoBundle 'lepture/vim-css'
+  NeoBundle 'hail2u/vim-css3-syntax'
+  NeoBundle 'skammer/vim-css-color'
   NeoBundle 'wavded/vim-stylus'
   NeoBundle 'pangloss/vim-javascript'
   NeoBundle 'plasticboy/vim-markdown'
@@ -66,7 +67,6 @@
   set hidden                      " allow buffer switching without saving
   "set autochdir                   " change directory to the current window
 
-  set backup
   if has('persistent_undo')
     set undofile
     set undolevels=1000
@@ -132,6 +132,20 @@
 
 " Key Mapping {
   nnoremap <F3> :NumbersToggle<CR>
+  " Tab page
+  nmap <S-Left> :tabp<CR>
+  nmap <S-Right> :tabn<CR>
+  nmap <Bslash>t :tabnew<CR>
+  nmap <Bslash>1 :tabn 1<CR>
+  nmap <Bslash>2 :tabn 2<CR>
+  nmap <Bslash>3 :tabn 3<CR>
+  nmap <Bslash>4 :tabn 4<CR>
+  nmap <Bslash>5 :tabn 5<CR>
+  nmap <Bslash>6 :tabn 6<CR>
+  nmap <Bslash>7 :tabn 7<CR>
+  nmap <Bslash>8 :tabn 8<CR>
+  nmap <Bslash>9 :tabn 9<CR>
+  nmap <Bslash>0 :tablast<CR>
 " }
 
 " Functions {
@@ -147,3 +161,8 @@
     call cursor(l, c)
   endfunction
 " }
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
