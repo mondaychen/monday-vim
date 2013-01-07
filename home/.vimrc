@@ -22,6 +22,7 @@
   NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'myusuf3/numbers.vim'
+  NeoBundle 'majutsushi/tagbar' " Dependencies: vim 7.0 & Exuberant ctags 5.5
   NeoBundle 'hail2u/vim-css3-syntax'
   NeoBundle 'skammer/vim-css-color'
   NeoBundle 'wavded/vim-stylus'
@@ -132,6 +133,7 @@
 
 " Key Mapping {
   nnoremap <F3> :NumbersToggle<CR>
+  nmap <F6> :TagbarToggle<CR>
   " Tab page
   nmap <S-Left> :tabp<CR>
   nmap <S-Right> :tabn<CR>
