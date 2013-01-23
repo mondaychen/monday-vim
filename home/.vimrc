@@ -68,6 +68,7 @@
   set hidden                      " allow buffer switching without saving
   "set autochdir                   " change directory to the current window
 
+  set nobackup
   if has('persistent_undo')
     set undofile
     set undolevels=1000
