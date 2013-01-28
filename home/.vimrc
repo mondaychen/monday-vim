@@ -37,6 +37,9 @@
   if executable('ack')
     NeoBundle 'ack.vim'
   endif
+  " code repos inside Douban Inc.
+  NeoBundle 'http://code.dapps.douban.com/shire_vim.git'
+  let g:shirevim#app="book"
 
   " Installation check.
   if neobundle#exists_not_installed_bundles()
