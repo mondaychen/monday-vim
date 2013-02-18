@@ -1,0 +1,18 @@
+[user]
+  user = monday.chen@gmail.com
+  name = mondaychen
+[alias]
+  ca = commit --all
+  fa = fetch --all
+  fu = fetch upstream
+  po = push origin
+  co = checkout
+  st = status
+  rh = reset --hard
+  graf = log --graph --oneline --decorate --color=auto
+[credential]
+  helper = cache
+[core]
+  editor = /usr/bin/vim
+[color]
+  ui = true
