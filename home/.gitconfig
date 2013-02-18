@@ -1,6 +1,6 @@
 [user]
-  name = mondaychen
-  email = monday.chen@gmail.com
+  name = chenmengdi
+  email = chenmengdi@douban.com
 [alias]
   ca = commit --all
   fa = fetch --all
@@ -10,9 +10,10 @@
   st = status
   rh = reset --hard
   graf = log --graph --oneline --decorate --color=auto
+  lcmd = log --color --pretty=format:\"%C\\(yellow\\)%h%Creset %C\\(green\\)%an%Creset %s\" --date=short --author=chenmengdi --branches=upstream/master
 [credential]
-  helper = osxkeychain
-[core]
-  editor = /usr/bin/vim
+  helper = cache
 [color]
   ui = true
+[hub]
+  host = github-ent.intra.douban.com
