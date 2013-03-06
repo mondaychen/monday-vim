@@ -1,6 +1,6 @@
 [user]
-  user = monday.chen@gmail.com
   name = mondaychen
+  email = monday.chen@gmail.com
 [alias]
   ca = commit --all
   fa = fetch --all
@@ -11,7 +11,7 @@
   rh = reset --hard
   graf = log --graph --oneline --decorate --color=auto
 [credential]
-  helper = cache
+  helper = osxkeychain
 [core]
   editor = /usr/bin/vim
 [color]
