@@ -30,6 +30,7 @@
   NeoBundle 'pangloss/vim-javascript'
   NeoBundle 'plasticboy/vim-markdown'
   NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+  NeoBundle 'fatih/vim-go' " Go lang
   " vim-scripts repos
   NeoBundle 'L9'
   NeoBundle 'FuzzyFinder'
@@ -76,6 +77,15 @@
     set undolevels=1000
     set undoreload=10000
   endif
+" }
+
+" Bundles settings {
+  " Use neocomplcache.
+  let g:neocomplcache_enable_at_startup = 1
+  " Use smartcase.
+  let g:neocomplcache_enable_smart_case = 1
+  " Set minimum syntax keyword length.
+  let g:neocomplcache_min_syntax_length = 3
 " }
 
 " Formatting {
