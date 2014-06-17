@@ -10,6 +10,7 @@
   st = status
   rh = reset --hard
   graf = log --graph --oneline --decorate --color=auto
+  sub = submodule update --recursive
 [credential]
   helper = osxkeychain
 [core]
