@@ -139,6 +139,7 @@
   set hlsearch                    " highlight search terms
   set incsearch                   " find as you type search
   set wildmenu                    " show list instead of just completing
+  set completeopt-=preview        " disable scratch preview window
   set wildmode=list:longest,full  " command <Tab> completion, list matches, then longest common part, then all
   set whichwrap=b,s,h,l,<,>,[,]   " backspace and cursor keys wrap to
   set scrolljump=5                " lines to scroll when cursor leaves screen
