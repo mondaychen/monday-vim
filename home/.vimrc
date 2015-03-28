@@ -24,6 +24,7 @@
   NeoBundle 'myusuf3/numbers.vim'
   NeoBundle 'majutsushi/tagbar' " Dependencies: vim 7.0 & Exuberant ctags 5.5
   NeoBundle 'othree/html5.vim'
+  NeoBundle 'digitaltoad/vim-jade'
   NeoBundle 'hail2u/vim-css3-syntax'
   NeoBundle 'skammer/vim-css-color'
   NeoBundle 'wavded/vim-stylus'
