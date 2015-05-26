@@ -32,6 +32,7 @@
   NeoBundle 'plasticboy/vim-markdown'
   NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
   NeoBundle 'fatih/vim-go' " Go lang
+  NeoBundle 'derekwyatt/vim-scala' " Scala
   " vim-scripts repos
   NeoBundle 'L9'
   NeoBundle 'FuzzyFinder'
