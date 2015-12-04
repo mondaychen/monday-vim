@@ -33,8 +33,6 @@ alias ll='ls -al'
 
 alias pdfgrep='pdfgrep -HiR'
 
-eval "$(rbenv init -)"
-
 export GOPATH="/Users/Monday/paths/go_path/"
 
 PATH=$PATH:$HOME/paths
