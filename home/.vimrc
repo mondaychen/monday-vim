@@ -29,6 +29,7 @@
   NeoBundle 'skammer/vim-css-color'
   NeoBundle 'wavded/vim-stylus'
   NeoBundle 'pangloss/vim-javascript'
+  NeoBundle 'mxw/vim-jsx'
   NeoBundle 'plasticboy/vim-markdown'
   NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
   NeoBundle 'fatih/vim-go' " Go lang
