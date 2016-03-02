@@ -42,13 +42,12 @@
   NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
   NeoBundle 'fatih/vim-go' " Go lang
   NeoBundle 'derekwyatt/vim-scala' " Scala
+  if executable('ag')
+    NeoBundle 'rking/ag.vim'
+  endif
   " vim-scripts repos
   NeoBundle 'L9'
   NeoBundle 'FuzzyFinder'
-  NeoBundle 'mako.vim'
-  if executable('ack')
-    NeoBundle 'ack.vim'
-  endif
 
   " Installation check.
   if neobundle#exists_not_installed_bundles()
@@ -103,6 +102,15 @@
   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+  "use ag as the ctrlp command
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden
+              \ --ignore .git
+              \ --ignore out
+              \ --ignore .svn
+              \ --ignore .hg
+              \ --ignore .DS_Store
+              \ -g ""'
 " }
 
 " Formatting {
