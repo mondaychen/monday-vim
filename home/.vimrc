@@ -31,6 +31,11 @@
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'myusuf3/numbers.vim'
   NeoBundle 'majutsushi/tagbar' " Dependencies: vim 7.0 & Exuberant ctags 5.5
+  NeoBundle 'terryma/vim-multiple-cursors'
+  if executable('ag')
+    NeoBundle 'rking/ag.vim'
+  endif
+  " Syntax
   NeoBundle 'othree/html5.vim'
   NeoBundle 'digitaltoad/vim-jade'
   NeoBundle 'hail2u/vim-css3-syntax'
@@ -42,9 +47,6 @@
   NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
   NeoBundle 'fatih/vim-go' " Go lang
   NeoBundle 'derekwyatt/vim-scala' " Scala
-  if executable('ag')
-    NeoBundle 'rking/ag.vim'
-  endif
   " vim-scripts repos
   NeoBundle 'L9'
   NeoBundle 'FuzzyFinder'
@@ -111,6 +113,8 @@
               \ --ignore .hg
               \ --ignore .DS_Store
               \ -g ""'
+
+  let g:multi_cursor_prev_key='<C-m>' " by default <C-p> which is used be ctrlp
 " }
 
 " Formatting {
