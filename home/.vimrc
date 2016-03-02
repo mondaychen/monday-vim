@@ -13,11 +13,19 @@
 
   " Bundles
   " on Github
-  NeoBundle 'Shougo/vimproc' " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+  NeoBundle 'Shougo/vimproc', {
+        \ 'build' : {
+        \     'windows' : 'tools\\update-dll-mingw',
+        \     'cygwin' : 'make -f make_cygwin.mak',
+        \     'mac' : 'make',
+        \     'linux' : 'make',
+        \     'unix' : 'gmake',
+        \    },
+        \ }
   NeoBundle 'Shougo/neocomplcache'
   NeoBundle 'Lokaltog/vim-easymotion' "<Leader><Leader>w
   NeoBundle 'Lokaltog/vim-powerline'
-  NeoBundle 'kien/ctrlp.vim'
+  NeoBundle 'ctrlpvim/ctrlp.vim'
   NeoBundle 'ervandew/supertab'
   NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'tpope/vim-surround'
@@ -157,6 +165,7 @@
 " Key Mapping {
   nnoremap <F3> :NumbersToggle<CR>
   nmap <F6> :TagbarToggle<CR>
+  let g:tagbar_autofocus = 1
   " Tab page
   nmap <S-Left> :tabp<CR>
   nmap <S-Right> :tabn<CR>
