@@ -25,3 +25,4 @@ Using [homesick](https://github.com/technicalpickles/homesick) to symlink the do
 - `F3` to toggle number display
 - `\t` or `<Leader>t` to open a new tab. `<Leader>[number]` for quick jump
 - `Shift+Left` and `Shift+Right` to switch between tabs
+- `cs`, `ds` and `ys` works in the [surround](http://www.vim.org/scripts/script.php?script_id=1697.vim) mode. Click the link for details.
