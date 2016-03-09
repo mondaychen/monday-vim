@@ -32,6 +32,7 @@
   NeoBundle 'myusuf3/numbers.vim'
   NeoBundle 'majutsushi/tagbar' " Dependencies: vim 7.0 & Exuberant ctags 5.5
   NeoBundle 'terryma/vim-multiple-cursors'
+  NeoBundle 'scrooloose/nerdtree'
   if executable('ag')
     NeoBundle 'rking/ag.vim'
   endif
@@ -178,6 +179,7 @@
   nnoremap <F3> :NumbersToggle<CR>
   nmap <F6> :TagbarToggle<CR>
   let g:tagbar_autofocus = 1
+  map <F4> :NERDTreeToggle<CR>
   " Tab page
   nmap <S-Left> :tabp<CR>
   nmap <S-Right> :tabn<CR>
