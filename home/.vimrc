@@ -13,22 +13,37 @@
 
   " Bundles
   " on Github
-  NeoBundle 'Shougo/vimproc' " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+  NeoBundle 'Shougo/vimproc', {
+        \ 'build' : {
+        \     'windows' : 'tools\\update-dll-mingw',
+        \     'cygwin' : 'make -f make_cygwin.mak',
+        \     'mac' : 'make',
+        \     'linux' : 'make',
+        \     'unix' : 'gmake',
+        \    },
+        \ }
   NeoBundle 'Shougo/neocomplcache'
   NeoBundle 'Lokaltog/vim-easymotion' "<Leader><Leader>w
   NeoBundle 'Lokaltog/vim-powerline'
-  NeoBundle 'kien/ctrlp.vim'
+  NeoBundle 'ctrlpvim/ctrlp.vim'
   NeoBundle 'ervandew/supertab'
   NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'tpope/vim-surround'
   NeoBundle 'myusuf3/numbers.vim'
   NeoBundle 'majutsushi/tagbar' " Dependencies: vim 7.0 & Exuberant ctags 5.5
+  NeoBundle 'terryma/vim-multiple-cursors'
+  NeoBundle 'scrooloose/nerdtree'
+  if executable('ag')
+    NeoBundle 'rking/ag.vim'
+  endif
+  " Syntax
   NeoBundle 'othree/html5.vim'
   NeoBundle 'digitaltoad/vim-jade'
   NeoBundle 'hail2u/vim-css3-syntax'
   NeoBundle 'skammer/vim-css-color'
   NeoBundle 'wavded/vim-stylus'
   NeoBundle 'pangloss/vim-javascript'
+  NeoBundle 'mxw/vim-jsx'
   NeoBundle 'plasticboy/vim-markdown'
   NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
   NeoBundle 'fatih/vim-go' " Go lang
@@ -36,10 +51,6 @@
   " vim-scripts repos
   NeoBundle 'L9'
   NeoBundle 'FuzzyFinder'
-  NeoBundle 'mako.vim'
-  if executable('ack')
-    NeoBundle 'ack.vim'
-  endif
 
   " Installation check.
   if neobundle#exists_not_installed_bundles()
@@ -94,6 +105,17 @@
   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+  "use ag as the ctrlp command
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --nogroup --hidden
+              \ --ignore .git
+              \ --ignore out
+              \ --ignore .svn
+              \ --ignore .hg
+              \ --ignore .DS_Store
+              \ -g ""'
+
+  let g:multi_cursor_prev_key='<C-m>' " by default <C-p> which is used be ctrlp
 " }
 
 " Formatting {
@@ -157,6 +179,8 @@
 " Key Mapping {
   nnoremap <F3> :NumbersToggle<CR>
   nmap <F6> :TagbarToggle<CR>
+  let g:tagbar_autofocus = 1
+  map <F4> :NERDTreeToggle<CR>
   " Tab page
   nmap <S-Left> :tabp<CR>
   nmap <S-Right> :tabn<CR>
@@ -193,12 +217,12 @@
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " Commenting blocks of code.
-autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
-autocmd FileType sh,ruby,python   let b:comment_leader = '# '
-autocmd FileType conf,fstab       let b:comment_leader = '# '
-autocmd FileType tex              let b:comment_leader = '% '
-autocmd FileType mail             let b:comment_leader = '> '
-autocmd FileType vim              let b:comment_leader = '" '
+autocmd FileType c,cpp,java,scala,javascript let b:comment_leader = '// '
+autocmd FileType sh,ruby,python              let b:comment_leader = '# '
+autocmd FileType conf,fstab                  let b:comment_leader = '# '
+autocmd FileType tex                         let b:comment_leader = '% '
+autocmd FileType mail                        let b:comment_leader = '> '
+autocmd FileType vim                         let b:comment_leader = '" '
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
