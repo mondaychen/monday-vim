@@ -131,6 +131,7 @@
     set laststatus=2
   endif
 
+  set number                      " line number
   set rnu                         " relative line number
   set numberwidth=4               " set the width of line number gutter column
   set linespace=2                 " set spaces between rows
