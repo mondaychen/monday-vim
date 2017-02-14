@@ -11,6 +11,9 @@
   rh = reset --hard
   graf = log --graph --oneline --decorate --color=auto
   sub = submodule update --recursive
+  hide = update-index --assume-unchanged
+  unhide = update-index --no-assume-unchanged
+	up = !git fetch && git rebase --autostash FETCH_HEAD
 [credential]
   helper = osxkeychain
 [core]
