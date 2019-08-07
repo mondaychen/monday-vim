@@ -40,17 +40,7 @@ alias ll='ls -al'
 
 alias pdfgrep='pdfgrep -HiR'
 
-source $HOME/.go_profile
-
-# export GOPATH="/Users/Monday/paths/go_path/:~/dev/core-common/src/go"
 PATH=$PATH:$HOME/paths
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/mchen205/google_cloud/path.bash.inc' ]; then source '/Users/mchen205/google_cloud/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/mchen205/google_cloud/completion.bash.inc' ]; then source '/Users/mchen205/google_cloud/completion.bash.inc'; fi
-
 
 # Setting PATH for Python 2.7
 # The original version is saved in .bash_profile.pysave
